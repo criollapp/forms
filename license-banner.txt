@@ -1,0 +1,4 @@
+/**
+ * @license x-common.module
+ * MIT license
+ */

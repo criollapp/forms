@@ -1,0 +1,30 @@
+<form (ngSubmit)="submitClicked.emit()" [formGroup]="caFormControl.control" [ngClass]="formClass">
+
+  <h2 *ngIf="caFormControl.titleControl" [ngClass]="titleClass">{{caFormControl.titleControl}}</h2>
+
+  <div *ngIf="caFormControl.displaySubmitOnTop()" [ngClass]="divSubmitButtonTopClass">
+      <button [ngClass]="submitClass" type="submit">{{caFormControl.submitText}}</button>
+  </div>
+
+  <div *ngIf="caFormControl.displayAlertOnTop()" [ngClass]="alertsTopClass">
+    <ca-alert *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
+  </div>
+
+  <div *ngIf="caFormControl.itemsAreGroup()" [ngClass]="formGroupContainerClass">
+    <ca-form-control-generic [caFormControl]="caFormControl.getFirstItem().xControl"></ca-form-control-generic>
+  </div>
+
+  <div *ngIf="!caFormControl.itemsAreGroup()" [ngClass]="formItemsContainerClass">
+    <div *ngFor="let item of caFormControl.items" [ngClass]="formItemsClass">
+      <input class="form-control" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" />
+    </div>
+  </div>
+
+  <div *ngIf="caFormControl.displayAlertOnBottom()" [ngClass]="alertsBottomClass">
+    <ca-alert *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
+  </div>
+
+  <div *ngIf="caFormControl.displaySubmitOnBottom()" [ngClass]="divSubmitButtonBottomClass">
+    <button [ngClass]="submitClass" type="submit">{{caFormControl.submitText}}</button>
+  </div>
+</form>
