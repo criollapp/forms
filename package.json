@@ -2,9 +2,9 @@
   "name": "@criollapp/forms",
   "main": "./bundles/ca-forms.umd.js",
   "typings": "./typings/public_api.d.ts",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "license": "MIT",
-  "description": "Criollapp Forms Library",
+  "description": "Dynamic forms creation with angular for several CSS frameworks such as Bootstrap",
   "scripts": {
     "build": "node build.js",
     "copy-files": "cp package.json dist && cp readme.md dist",
@@ -23,7 +23,12 @@
   "keywords": [
     "angular2",
     "library",
-    "example"
+    "forms",
+    "form",
+    "dynamic forms",
+    "angular forms",
+    "customized form",
+    "automatic form"
   ],
   "author": "Miguel Rivera",
   "repository": {
