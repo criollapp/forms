@@ -27,7 +27,8 @@
     "emitDecoratorMetadata": true,
     "sourceMap": true,
     "inlineSources": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false
   },
   "typings":"index.ts",
   "files": [
