@@ -41,15 +41,14 @@ if (shell.exec(`rollup -c rollup.es.config.js -i ${NPM_DIR}/${PACKAGE}.js -o ${E
 }
 
 shell.echo(`Produce ESM6 version`);
-shell.exec(`ngc -p tsconfig.json --target es6 -d false --outDir ${OUT_DIR_ESM6} --importHelpers true --sourceMap`);
+shell.exec(`ngc -p tsconfig.json --target es6 -d true --outDir ${OUT_DIR_ESM6} --importHelpers true --sourceMap`);
 if (shell.exec(`rollup -c rollup.es.config.js -i ${OUT_DIR_ESM6}/${PACKAGE}.js -o ${ESM6_DIR}/${PACKAGE}.js`).code !== 0) {
   shell.echo(chalk.red(`Error: ESM6 version failed`));
   shell.exit(1);
 }
 
 shell.echo(`Run Rollup conversion on package`);
-shell.exec('find ./src -name "*.html" -type f -exec cp {} '+NPM_DIR+'/esm6 \\;');
-shell.exec('find ./src -name "*.css" -type f -exec cp {} '+NPM_DIR+'/esm6 \\;');
+shell.cp('-R', './src/library/**/*.{html,css}', NPM_DIR+'/esm6');
 if (shell.exec(`rollup -c rollup.config.js -i ${ESM6_DIR}/${PACKAGE}.js -o ${BUNDLES_DIR}/${PACKAGE}.umd.js`).code !== 0) {
   shell.echo(chalk.red(`Error: Rollup conversion failed`));
   shell.exit(1);
