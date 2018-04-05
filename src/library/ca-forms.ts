@@ -1,6 +1,7 @@
-export { CAFormAbstract } from './abstracts/ca-form.abstract';
-export { CACrudFormAbstract } from './abstracts/ca-crud-form.abstract';
-export { CAFormComponent } from './components/form/ca-form.component';
+export { CAFormControl } from "./class/ca-form-control.class";
+export { CAFormGroup } from "./class/ca-form-group.class";
+export { CAFormArray } from "./class/ca-form-array.class";
+export { CAFormControlAbstract } from "./abstracts/ca-form-control.abstract";
 export { CAFormsModule } from './modules/ca-forms.module';
 export {CAValidators} from './validators/ca-validators';
 export {CAFormConfig} from './class/config/ca-form-config.class';

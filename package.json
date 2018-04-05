@@ -2,7 +2,7 @@
   "name": "@criollapp/forms",
   "main": "./bundles/ca-forms.umd.js",
   "typings": "./typings/public_api.d.ts",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "license": "MIT",
   "description": "Criollapp Forms Library",
   "scripts": {
@@ -40,7 +40,7 @@
     "@angular/platform-browser": "^5.2.2",
     "@angular/platform-browser-dynamic": "^5.2.2",
     "@criollapp/common": "^1.0.23",
-    "@criollapp/components": "^1.0.23",
+    "@criollapp/components": "^1.0.24",
     "@criollapp/lang": "^1.0.23",
     "@criollapp/theme": "^1.0.23",
     "@types/jasmine": "^2.8.6",
