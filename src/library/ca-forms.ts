@@ -1,3 +1,4 @@
+export { CAFormComponent } from "./components/form/ca-form.component";
 export { CAFormControl } from "./class/ca-form-control.class";
 export { CAFormGroup } from "./class/ca-form-group.class";
 export { CAFormArray } from "./class/ca-form-array.class";
