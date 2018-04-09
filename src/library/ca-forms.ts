@@ -1,4 +1,3 @@
-export { CAFormItemAbstract } from "./abstracts/ca-form-item.abstract";
 export { CAFormComponent } from "./components/form/ca-form.component";
 export { CAFormControl } from "./class/ca-form-control.class";
 export { CAFormGroup } from "./class/ca-form-group.class";
@@ -10,3 +9,4 @@ export {CAFormConfig} from './class/config/ca-form-config.class';
 export {CAFormConfigItem} from './class/config/ca-form-config-item.class';
 export {CAFormConfigResponse} from './class/config/ca-form-config.response';
 export {CAFormConfigValidator} from './class/config/ca-form-config-validator.class';
+export { CAFormItemAbstract } from "./abstracts/ca-form-item.abstract";
