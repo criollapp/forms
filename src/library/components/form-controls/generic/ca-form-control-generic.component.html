@@ -15,8 +15,8 @@
   </div>
 
   <div *ngIf="!caFormControl.itemsAreGroup()" [ngClass]="formItemsContainerClass">
-    <div *ngFor="let item of caFormControl.items" [ngClass]="formItemsClass">
-      <input class="form-control" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" />
+    <div *ngFor="let item of caFormControl.items" [ngClass]="formItemsClass" [ngSwitch]="item.subType">
+      <input *ngSwitchCase="item.isInput() ? item.subType : ''" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" class="form-control" />
     </div>
   </div>
 

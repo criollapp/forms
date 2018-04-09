@@ -13,6 +13,11 @@ export class TestICAFormItemImplementation implements ICAFormItem
     this.objectClass = {};
   }
 
+  public isInput():boolean
+  {
+    return false;
+  }
+
   isGroup():boolean
   {
     return false;

@@ -354,4 +354,41 @@ describe('CAFormControlGenericComponent', ()=>{
         expect( de.classes[CACSSUtil.CLASS_CA_FORM_ITEMS_CONTAINER] ).toBeTruthy();
     });
 
+    it('input is visible if is text',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].name == 'input').toBeTruthy();
+    });
+
+    it('input is visible if is password',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example', 'password'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].name == 'input').toBeTruthy();
+    });
+
+    it('input is not visible if subtype is wrong',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example', 'password27'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+        console.log(de.children);
+
+        expect( de.children.length == 0).toBeTruthy();
+    });
+
+    it('inputs on loop has formControlName attr',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].attributes['ng-reflect-name'] == 'example').toBeTruthy();
+    });
+
 });

@@ -13,6 +13,10 @@ describe('ICAFormItem',()=>{
     expect(formItem.type == '').toBeTruthy();
   });
 
+  it('has isInput method',()=>{
+    expect(typeof formItem.isInput() == 'boolean').toBeTruthy();
+  });
+
   it('has isGroup method',()=>{
     expect(typeof formItem.isGroup() == 'boolean').toBeTruthy();
   });

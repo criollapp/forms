@@ -42,6 +42,11 @@ export abstract class CAFormItemAbstract implements ICAFormItem
     }
   }
 
+  public isInput():boolean
+  {
+    return this.subType == CAFormItemAbstract.SUB_TYPE_INPUT_TEXT || this.subType == CAFormItemAbstract.SUB_TYPE_INPUT_PASSWORD;
+  }
+
   public isGroup():boolean
   {
     return this.type == CAFormItemAbstract.TYPE_FORM_GROUP;

@@ -136,6 +136,22 @@ describe('CAFormItemAbstract', ()=>{
     expect( item.xControl instanceof CAFormArray ).toBeTruthy();
   });
 
+  it('isInput return false when is false', ()=>{
+    expect( item.isInput() ).toBeFalsy();
+  });
+
+  it('isInput return true when subType is text', ()=>{
+    item.subType = 'text';
+
+    expect( item.isInput() ).toBeTruthy();
+  });
+
+  it('isInput return true when subType is password', ()=>{
+    item.subType = 'password';
+
+    expect( item.isInput() ).toBeTruthy();
+  });
+
   it('isGroup return false when is false', ()=>{
     expect( item.isGroup() ).toBeFalsy();
   });
