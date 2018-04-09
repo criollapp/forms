@@ -7,7 +7,7 @@
   </div>
 
   <div *ngIf="caFormControl.displayAlertOnTop()" [ngClass]="alertsTopClass">
-    <ca-alert *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
+    <ca-alert [frameworkName]="frameworkName" *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
   </div>
 
   <div *ngIf="caFormControl.itemsAreGroup()" [ngClass]="formGroupContainerClass">
@@ -21,7 +21,7 @@
   </div>
 
   <div *ngIf="caFormControl.displayAlertOnBottom()" [ngClass]="alertsBottomClass">
-    <ca-alert *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
+    <ca-alert [frameworkName]="frameworkName" *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
   </div>
 
   <div *ngIf="caFormControl.displaySubmitOnBottom()" [ngClass]="divSubmitButtonBottomClass">

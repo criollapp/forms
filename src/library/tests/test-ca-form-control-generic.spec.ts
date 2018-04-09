@@ -75,6 +75,18 @@ describe('CAFormControlGenericComponent', ()=>{
         expect( component.submitClass.indexOf('btn btn-primary') > - 1 ).toBeTruthy();
     });
 
+    it('div for alerts top has frameworkName of container',()=>{
+        component.caFormControl.displayAlertOn = [ CAFormControlAbstract.DISPLAY_ALERTS_ON_TOP_FORM ];
+        component.frameworkName = 'material';
+        component.caFormControl.addErrorAlert('example', 'Example');
+        component.caFormControl.addErrorAlert('example2', 'Example 2');
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-alerts-top'));
+
+        expect( de.children[0].componentInstance.frameworkName == 'material').toBeTruthy();
+    });
+
     it('div for alerts top has correct classes',()=>{
         component.caFormControl.displayAlertOn = [ CAFormControlAbstract.DISPLAY_ALERTS_ON_TOP_FORM ];
         fixture.detectChanges();
@@ -94,6 +106,17 @@ describe('CAFormControlGenericComponent', ()=>{
 
             expect( de != undefined ).toBeTruthy();
         });
+    });
+
+    it('div for alerts bottom has frameworkName of container',()=>{
+        component.frameworkName = 'material';
+        component.caFormControl.addErrorAlert('example', 'Example');
+        component.caFormControl.addErrorAlert('example2', 'Example 2');
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-alerts-bottom'));
+
+        expect( de.children[0].componentInstance.frameworkName == 'material').toBeTruthy();
     });
 
     it('div for alerts bottom has correct classes',()=>{
