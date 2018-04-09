@@ -391,4 +391,23 @@ describe('CAFormControlGenericComponent', ()=>{
         expect( de.children[0].attributes['ng-reflect-name'] == 'example').toBeTruthy();
     });
 
+    it('inputs on loop has type attr with correct value',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example', 'password'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].properties['type'] == 'password').toBeTruthy();
+    });
+
+    it('inputs on loop has value attr with value on model',()=>{
+        component.caFormControl.model = {example: 'hello'};
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].properties['value'] == 'hello').toBeTruthy();
+    });
+
 });
