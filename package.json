@@ -2,7 +2,7 @@
   "name": "@criollapp/forms",
   "main": "./bundles/ca-forms.umd.js",
   "typings": "./typings/public_api.d.ts",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "license": "MIT",
   "description": "Dynamic forms creation with angular for several CSS frameworks such as Bootstrap",
   "scripts": {
