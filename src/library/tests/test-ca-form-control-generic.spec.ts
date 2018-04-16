@@ -377,7 +377,6 @@ describe('CAFormControlGenericComponent', ()=>{
         fixture.detectChanges();
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
-        console.log(de.children);
 
         expect( de.children.length == 0).toBeTruthy();
     });

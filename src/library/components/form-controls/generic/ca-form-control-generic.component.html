@@ -10,10 +10,6 @@
     <ca-alert [frameworkName]="frameworkName" *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
   </div>
 
-  <div *ngIf="caFormControl.itemsAreGroup()" [ngClass]="formGroupContainerClass">
-    <ca-form-control-generic [caFormControl]="caFormControl.getFirstItem().xControl"></ca-form-control-generic>
-  </div>
-
   <div *ngIf="!caFormControl.itemsAreGroup()" [ngClass]="formItemsContainerClass">
     <div *ngFor="let item of caFormControl.items" [ngClass]="formItemsClass" [ngSwitch]="item.subType">
       <input *ngSwitchCase="item.isInput() ? item.subType : ''" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" class="form-control" />
