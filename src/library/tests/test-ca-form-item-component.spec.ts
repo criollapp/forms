@@ -61,9 +61,9 @@ describe('CAFormItemComponent', ()=>{
         expect( de.properties['type'] == 'password').toBeTruthy();
     });
 
-    it('input has value attr with value on model',()=>{
+    it('input has value attr with value on value attr',()=>{
         component.formItem = CAFormItemAbstract.getInputItem('example');
-        component.model = 'hello';
+        component.value = 'hello';
         fixture.detectChanges();
 
         fixture.whenRenderingDone().then(()=>{
@@ -78,15 +78,7 @@ describe('CAFormItemComponent', ()=>{
     });
 
     it('model has empty value by default',()=>{
-        expect(component.model).toBe('');
-    });
-
-    it('modelChange is emitted when model  change',()=>{
-        spyOn(component.modelChange, 'emit');
-
-        component.model = 'hello';
-
-        expect(component.modelChange.emit).toHaveBeenCalled();
+        expect(component.value).toBe('');
     });
 
 });
