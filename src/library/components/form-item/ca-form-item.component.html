@@ -1,3 +1,0 @@
-<div *ngIf="formItem" [ngSwitch]="formItem.subType">
-    <input *ngSwitchCase="formItem.isInput() ? formItem.subType : ''" [type]="formItem.subType" [(ngModel)]="value"  class="form-control" />
-</div>
