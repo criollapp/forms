@@ -21,6 +21,7 @@ export abstract class CAFormControlAbstract implements ICAFormControl
   public alerts: CAlertClass[];
   public actionType: string;
   protected _model:any;
+  private indexOfSingleTip:number;
   public parentModel:any;
   public control: FormGroup | FormArray | FormControl;
 
@@ -35,6 +36,7 @@ export abstract class CAFormControlAbstract implements ICAFormControl
   constructor()
   {
     this.items = [];
+    this.indexOfSingleTip = 0;
     this.alerts = [];
     this.route = '';
     this.submitText = '';
@@ -42,6 +44,11 @@ export abstract class CAFormControlAbstract implements ICAFormControl
     this.displayAlertOn = [CAFormControlAbstract.DISPLAY_ALERTS_ON_BOTTOM_FORM];
     this.displaySubmitOn = [CAFormControlAbstract.DISPLAY_SUBMIT_ON_BOTTOM];
     this.alignTitleTo = CAFormControlAbstract.ALIGN_TO_LEFT;
+  }
+
+  public get singleTip():CAlertClass
+  {
+    return this.alerts.length > 0 ? this.alerts[this.indexOfSingleTip] : null;
   }
 
   public get model():any

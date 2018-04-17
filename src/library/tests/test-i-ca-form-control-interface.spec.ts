@@ -43,6 +43,10 @@ describe('ICAFormControl',()=>{
     expect( implementation.submitText == '' ).toBeTruthy();
   });
 
+  it('has singleTip attr',()=>{
+    expect( implementation.singleTip == null ).toBeTruthy();
+  });
+
   it('has displayAlertOn attr',()=>{
     expect( implementation.displayAlertOn.length == 1 ).toBeTruthy();
   });

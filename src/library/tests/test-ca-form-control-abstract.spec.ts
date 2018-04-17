@@ -108,6 +108,16 @@ describe('CAFormControlAbstract',()=>{
     expect( formControl.displaySubmitOnBottom() ).toBeFalsy();
   });
 
+  it('singleTip return null if not have alerts',()=>{
+    expect( formControl.singleTip ).toBeNull();
+  });
+
+  it('singleTip return first alert by default if we have',()=>{
+    formControl.alerts.push(new CAlertClass('hello'));
+
+    expect( formControl.singleTip.message ).toBe('hello');
+  });
+
   it('displaySubmitOnTop return true when is true',()=>{
     formControl.displaySubmitOn[0] = CAFormControlAbstract.DISPLAY_SUBMIT_ON_TOP;
 

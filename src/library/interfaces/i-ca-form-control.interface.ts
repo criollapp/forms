@@ -10,6 +10,7 @@ export interface ICAFormControl
   model:any;
   parentModel:any;
   alerts: CAlertClass[];
+  singleTip: CAlertClass;
   actionType: string;
   control: FormGroup | FormArray | FormControl;
   modelChange:EventEmitter<any>;
