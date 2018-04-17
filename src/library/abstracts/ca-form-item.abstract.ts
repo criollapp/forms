@@ -25,8 +25,8 @@ export abstract class CAFormItemAbstract implements ICAFormItem
 
   constructor( config?:CAFormConfigItem )
   {
-    this.label = config ? config.label : '';
     this.key = config ? config.name : '';
+    this.label = config && config.label != '' ? config.label : this.key.toUpperCase();
     this.objectClass = config ? config.objectClass : [];
     this.type = config ? config.type : '';
 

@@ -23,6 +23,12 @@ describe('CAFormItemAbstract', ()=>{
     expect( CArrayUtil.areEqual( item.objectClass, [] ) ).toBeTruthy();
   });
 
+  it('label  set value on uppercase when label is not set',()=>{
+    let item2:TestCAFormItemAbstractComponent = new TestCAFormItemAbstractComponent(config);
+
+    expect( item2.label ).toBe('EXAMPLE');
+  });
+
   it('type get the value from config type',()=>{
     let otherItem:TestCAFormItemAbstractComponent = new TestCAFormItemAbstractComponent(config);
 
