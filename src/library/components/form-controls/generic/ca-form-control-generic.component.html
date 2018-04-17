@@ -13,7 +13,7 @@
   <div [ngClass]="formItemsContainerClass">
     <div *ngFor="let item of caFormControl.items" [ngClass]="formItemsClass" [ngSwitch]="item.subType">
       <label [for]="item.key">{{item.label}}</label>
-      <input [placeholder]="item.shortDescription" *ngSwitchCase="item.isInput() ? item.subType : ''" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" class="form-control" />
+      <input [id]="item.key" [placeholder]="item.shortDescription" *ngSwitchCase="item.isInput() ? item.subType : ''" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" class="form-control" />
     </div>
   </div>
 

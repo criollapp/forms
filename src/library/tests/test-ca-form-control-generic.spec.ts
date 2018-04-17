@@ -426,4 +426,13 @@ describe('CAFormControlGenericComponent', ()=>{
         expect( de.children[0].nativeElement.innerHTML == 'EXAMPLE').toBeTruthy();
     });
 
+    it('inputs on loop has id value',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[1].properties['id'] == 'example').toBeTruthy();
+    });
+
 });
