@@ -5,7 +5,7 @@ import { DebugElement } from "@angular/core";
 import { CAFormsModule } from "../modules/ca-forms.module";
 import { By } from "@angular/platform-browser";
 import { async } from "@angular/core/testing";
-import {CArrayUtil} from '@criollapp/common';
+import { CArrayUtil, CAlertClass } from '@criollapp/common';
 import {CACSSUtil} from '@criollapp/theme';
 import { CAFormControlAbstract } from "../abstracts/ca-form-control.abstract";
 import { CAFormItem } from "../class/ca-form-item.class";
@@ -433,6 +433,35 @@ describe('CAFormControlGenericComponent', ()=>{
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
         expect( de.children[1].properties['id'] == 'example').toBeTruthy();
+    });
+
+    it('inputs on loop not has small tag if singleTip is null',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children.length == 2).toBeTruthy();
+    });
+
+    it('items on loop has small tag if singleTip is not null',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        component.caFormControl.items[0].xControl.alerts.push(new CAlertClass());
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[2].name == 'small').toBeTruthy();
+    });
+
+    it('items on loop has small tag if singleTip is not null and content is correct',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        component.caFormControl.items[0].xControl.alerts.push(new CAlertClass('MSJ'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[2].nativeElement.innerHTML).toBe('MSJ');
     });
 
 });
