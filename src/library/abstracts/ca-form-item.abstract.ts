@@ -16,6 +16,7 @@ export abstract class CAFormItemAbstract implements ICAFormItem
   public static readonly SUB_TYPE_INPUT_TEXT:string = 'text';
   public static readonly SUB_TYPE_INPUT_PASSWORD:string = 'password';
 
+  public label:string;
   public type:string;
   public subType:string;
   public key:string;
@@ -24,6 +25,7 @@ export abstract class CAFormItemAbstract implements ICAFormItem
 
   constructor( config?:CAFormConfigItem )
   {
+    this.label = config ? config.label : '';
     this.key = config ? config.name : '';
     this.objectClass = config ? config.objectClass : [];
     this.type = config ? config.type : '';

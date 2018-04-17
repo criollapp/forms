@@ -3,12 +3,14 @@ import { ICAFormItem } from "../../interfaces/i-ca-form-item.interface";
 export class TestICAFormItemImplementation implements ICAFormItem
 {
   public key:string;
+  public label:string;
   public type:string;
   public objectClass:Object;
 
   constructor()
   {
     this.key = '';
+    this.label = '';
     this.type = '';
     this.objectClass = {};
   }

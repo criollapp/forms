@@ -5,6 +5,10 @@ import {CAObjectUtil} from '@criollapp/common';
 describe('ICAFormItem',()=>{
   let formItem:ICAFormItem = new TestICAFormItemImplementation();
 
+  it('has label attr',()=>{
+    expect(formItem.label == '').toBeTruthy();
+  });
+
   it('has key attr',()=>{
     expect(formItem.key == '').toBeTruthy();
   });

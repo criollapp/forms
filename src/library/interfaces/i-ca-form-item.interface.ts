@@ -3,6 +3,7 @@ import { ICAFormControl } from "./i-ca-form-control.interface";
 export interface ICAFormItem
 {
   key:string;
+  label:string;
   type:string;
   objectClass:Object;
   xControl?:ICAFormControl;

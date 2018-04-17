@@ -18,6 +18,7 @@ describe('CAFormItemAbstract', ()=>{
 
   it('has attrs with default values',()=>{
     expect( item.key ).toBe('');
+    expect( item.label ).toBe('');
     expect( item.type ).toBe('');
     expect( CArrayUtil.areEqual( item.objectClass, [] ) ).toBeTruthy();
   });

@@ -359,7 +359,7 @@ describe('CAFormControlGenericComponent', ()=>{
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
-        expect( de.children[0].name == 'input').toBeTruthy();
+        expect( de.children[1].name == 'input').toBeTruthy();
     });
 
     it('input is visible if is password',()=>{
@@ -368,7 +368,7 @@ describe('CAFormControlGenericComponent', ()=>{
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
-        expect( de.children[0].name == 'input').toBeTruthy();
+        expect( de.children[1].name == 'input').toBeTruthy();
     });
 
     it('input is not visible if subtype is wrong',()=>{
@@ -377,7 +377,7 @@ describe('CAFormControlGenericComponent', ()=>{
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
-        expect( de.children.length == 0).toBeTruthy();
+        expect( de.children.length == 1).toBeTruthy();
     });
 
     it('inputs on loop has formControlName attr',()=>{
@@ -386,7 +386,7 @@ describe('CAFormControlGenericComponent', ()=>{
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
-        expect( de.children[0].attributes['ng-reflect-name'] == 'example').toBeTruthy();
+        expect( de.children[1].attributes['ng-reflect-name'] == 'example').toBeTruthy();
     });
 
     it('inputs on loop has type attr with correct value',()=>{
@@ -395,7 +395,7 @@ describe('CAFormControlGenericComponent', ()=>{
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
-        expect( de.children[0].properties['type'] == 'password').toBeTruthy();
+        expect( de.children[1].properties['type'] == 'password').toBeTruthy();
     });
 
     it('inputs on loop has value attr with value on model',()=>{
@@ -405,7 +405,7 @@ describe('CAFormControlGenericComponent', ()=>{
 
         de = fixture.debugElement.query(By.css('.ca-form-items'));
 
-        expect( de.children[0].properties['value'] == 'hello').toBeTruthy();
+        expect( de.children[1].properties['value'] == 'hello').toBeTruthy();
     });
 
 });

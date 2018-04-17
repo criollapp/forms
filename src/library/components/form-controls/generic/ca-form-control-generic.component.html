@@ -10,8 +10,9 @@
     <ca-alert [frameworkName]="frameworkName" *ngFor="let alert of caFormControl.alerts" [alert]="alert" (close)="caFormControl.removeAlert($event)"></ca-alert>
   </div>
 
-  <div *ngIf="!caFormControl.itemsAreGroup()" [ngClass]="formItemsContainerClass">
+  <div [ngClass]="formItemsContainerClass">
     <div *ngFor="let item of caFormControl.items" [ngClass]="formItemsClass" [ngSwitch]="item.subType">
+      <label [for]="item.key">{{item.label}}</label>
       <input *ngSwitchCase="item.isInput() ? item.subType : ''" [formControlName]="item.key" [type]="item.subType" [(ngModel)]="item.xControl.model" class="form-control" />
     </div>
   </div>

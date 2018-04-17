@@ -5,6 +5,7 @@ describe('caFormConfigItem', ()=>{
 
   it('attr exists',()=>{
     expect(config.name != null).toBeTruthy();
+    expect(config.label != null).toBeTruthy();
     expect(config.validators != null).toBeTruthy();
   });
 });
