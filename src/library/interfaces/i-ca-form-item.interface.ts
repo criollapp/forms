@@ -4,6 +4,7 @@ export interface ICAFormItem
 {
   key:string;
   label:string;
+  shortDescription:string;
   type:string;
   objectClass:Object;
   xControl?:ICAFormControl;

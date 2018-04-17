@@ -4,6 +4,7 @@ export class TestICAFormItemImplementation implements ICAFormItem
 {
   public key:string;
   public label:string;
+  public shortDescription:string;
   public type:string;
   public objectClass:Object;
 
@@ -11,6 +12,7 @@ export class TestICAFormItemImplementation implements ICAFormItem
   {
     this.key = '';
     this.label = '';
+    this.shortDescription = '';
     this.type = '';
     this.objectClass = {};
   }

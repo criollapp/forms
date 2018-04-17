@@ -19,6 +19,7 @@ describe('CAFormItemAbstract', ()=>{
   it('has attrs with default values',()=>{
     expect( item.key ).toBe('');
     expect( item.label ).toBe('');
+    expect( item.shortDescription ).toBe('');
     expect( item.type ).toBe('');
     expect( CArrayUtil.areEqual( item.objectClass, [] ) ).toBeTruthy();
   });
@@ -27,6 +28,12 @@ describe('CAFormItemAbstract', ()=>{
     let item2:TestCAFormItemAbstractComponent = new TestCAFormItemAbstractComponent(config);
 
     expect( item2.label ).toBe('EXAMPLE');
+  });
+
+  it('shortDescription set value of label when it is not set',()=>{
+    let item2:TestCAFormItemAbstractComponent = new TestCAFormItemAbstractComponent(config);
+
+    expect( item2.shortDescription ).toBe('EXAMPLE');
   });
 
   it('type get the value from config type',()=>{

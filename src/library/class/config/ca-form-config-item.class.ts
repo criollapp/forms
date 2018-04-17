@@ -4,6 +4,7 @@ import { CAFormConfigValidator } from "./ca-form-config-validator.class";
 export class CAFormConfigItem extends CAClassAbstract {
   public name:string;
   public label:string;
+  public shortDescription:string;
   public validators:CAFormConfigValidator[];
   public objectClass:string[];
   public type:string;
@@ -17,6 +18,7 @@ export class CAFormConfigItem extends CAClassAbstract {
     super();
 
     this.label = '';
+    this.shortDescription = '';
     this.name = '';
     this.type = CAFormConfigItem.CONTROL_TYPE_FORM_CONTROL;
     this.validators = [];
