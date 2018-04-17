@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitClicked.emit()" [formGroup]="caFormControl.control" [ngClass]="formClass">
+<div [formGroup]="caFormControl.control" [ngClass]="formClass">
 
   <h2 *ngIf="caFormControl.titleControl" [ngClass]="titleClass">{{caFormControl.titleControl}}</h2>
 
@@ -21,6 +21,6 @@
   </div>
 
   <div *ngIf="caFormControl.displaySubmitOnBottom()" [ngClass]="divSubmitButtonBottomClass">
-    <button [ngClass]="submitClass" type="submit">{{caFormControl.submitText}}</button>
+    <button (click)="submitClicked.emit()" [ngClass]="submitClass" type="submit">{{caFormControl.submitText}}</button>
   </div>
-</form>
+</div>

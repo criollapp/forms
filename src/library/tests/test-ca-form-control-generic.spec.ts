@@ -49,11 +49,10 @@ describe('CAFormControlGenericComponent', ()=>{
     });
 
     it('form has correct attrs',()=>{
-        de = fixture.debugElement.query(By.css('form'));
+        de = fixture.debugElement.query(By.css('.ca-form'));
 
         expect( de.attributes['ng-reflect-form'] != undefined ).toBeTruthy();
         expect( de.classes['ca-form']).toBeTruthy();
-        expect( de.listeners[0].name == "ngSubmit" ).toBeTruthy();
     });
 
     it('formItemsContainerClass has default values',()=>{
