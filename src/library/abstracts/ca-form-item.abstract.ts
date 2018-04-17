@@ -16,8 +16,8 @@ export abstract class CAFormItemAbstract implements ICAFormItem
   public static readonly SUB_TYPE_INPUT_TEXT:string = 'text';
   public static readonly SUB_TYPE_INPUT_PASSWORD:string = 'password';
 
-  public label:string;
-  public shortDescription:string;
+  private _label:string;
+  private _shortDescription:string;
   public type:string;
   public subType:string;
   public key:string;
@@ -27,7 +27,7 @@ export abstract class CAFormItemAbstract implements ICAFormItem
   constructor( config?:CAFormConfigItem )
   {
     this.key = config ? config.name : '';
-    this.label = config && config.label != '' ? config.label : this.key.toUpperCase();
+    this.label = config ? config.label : '';
     this.shortDescription = config && config.shortDescription != '' ? config.shortDescription : this.label;
     this.objectClass = config ? config.objectClass : [];
     this.type = config ? config.type : '';
@@ -44,6 +44,26 @@ export abstract class CAFormItemAbstract implements ICAFormItem
         this.xControl = new CAFormArray();
         break;
     }
+  }
+
+  public get label()
+  {
+    return this._label == '' ? this.key.toUpperCase() : this._label;
+  }
+
+  public set label( label:string )
+  {
+    this._label = label;
+  }
+
+  public get shortDescription()
+  {
+    return this._shortDescription == '' ? this.label : this._shortDescription;
+  }
+
+  public set shortDescription( shortDescription:string )
+  {
+    this._shortDescription = shortDescription;
   }
 
   public isInput():boolean

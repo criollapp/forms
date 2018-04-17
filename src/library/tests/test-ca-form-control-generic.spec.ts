@@ -408,4 +408,22 @@ describe('CAFormControlGenericComponent', ()=>{
         expect( de.children[1].properties['value'] == 'hello').toBeTruthy();
     });
 
+    it('labels on loop has for attr',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].properties['htmlFor'] == 'example').toBeTruthy();
+    });
+
+    it('labels on loop has value on content',()=>{
+        component.caFormControl.addItem(CAFormItemAbstract.getInputItem('example'));
+        fixture.detectChanges();
+
+        de = fixture.debugElement.query(By.css('.ca-form-items'));
+
+        expect( de.children[0].nativeElement.innerHTML == 'EXAMPLE').toBeTruthy();
+    });
+
 });
